@@ -1,4 +1,4 @@
-var connection = require("connection.js");
+var connection = require("./connection.js");
 
 
 //prints question marks to an array to help generate MYSQL syntax

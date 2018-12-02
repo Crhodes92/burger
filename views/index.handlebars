@@ -4,11 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col s6">
-        {{#each burgers}}
+        {{#each burger}}
           {{#unless this.devoured}}
             <div>
-              <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                <button type="submit" class='burgerAvailable'> {{this.burger_name}}</button>
+              <form>
+                <button type="submit" class='bYouCanEat' data-id="{{id}}" data-devoured="{{devoured}}"> {{this.burger_name}}</button>
               </form>
             </div>
           {{/unless}}
@@ -16,9 +16,9 @@
       </div>
 
       <div class="col s6">
-        {{#each burgers}}
+        {{#each burger}}
           {{#if this.devoured}}
-            <div class='burgerEaten'>
+            <div class='bIsEaten'>
               <div>
                 {{this.burger_name}}
               </div>
@@ -30,13 +30,13 @@
   </div>
 </main>
 
-<h2>Add A Burger Option</h2>
+<h2>You Wanna Add A Burger?</h2>
 
 <div class="row">
   <div class="col s12">
-    <form action="/burgers" method="POST">
-      <input type="text" id="name" name="burger_name" placeholder="Uber Delicious Burger">
-      <button type="submit" class="addBurgerButton">Add The Burger</button>
+    <form>
+      <input type="text" id="name" name="burger_name" placeholder="Your tasty burger recipe">
+      <button type="submit" class="burgerSubmit">Post Dat Burger</button>
     </form>
   </div>
 </div>
